@@ -1,0 +1,151 @@
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    background-size: 150% 150%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Шапка и подвал */
+header, footer {
+    background: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Навигация */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Основной контент */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+#letter p {
+    text-indent: 30px;
+}
+
+/* Галерея */
+#photos .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#photos .gallery img {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#photos .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Календарь */
+#calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#calendar th, #calendar td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#calendar th {
+    background: #333;
+    color: white;
+}
+
+#calendar td {
+    background: #f9f9f9;
+    transition: background 0.3s;
+}
+
+#calendar td:hover {
+    background: #f1f1f1;
+
+/* Дополнительные стили */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    main {
+        padding: 15px;
+    }
+
+    #photos .gallery img {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fecfef 100%);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+
+.menu-toggle {
+    display: none;
+    background: rgba(51, 51, 51, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%; /* Кнопка растягивается на всю ширину */
+    text-align: center; /* Выравнивание текста по центру */
+    box-sizing: border-box; /* Учитывать padding и border в ширине */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.8);
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+nav ul.hide {
+    display: none;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fecfef);
+    border-radius: 10px;
+    filter: blur(20px);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+
+#photos .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+#photos .gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#photos .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    #photos .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
